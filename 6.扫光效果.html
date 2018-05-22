@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    div {
+      width: 500px;
+      height: 384px;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    div::after {
+        content: "";
+        position: absolute;
+        height: 384px;
+        width: 20px;
+        background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0));
+        top: 0;
+        left: -210px;
+        transform: skew(-45deg);
+    }
+    div:hover::after {
+      left: 700px;
+      /*回来没有效果*/
+      transition: all 1s;
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <img src="images/box.jpg" alt="">
+</div>
+
+</body>
+</html>

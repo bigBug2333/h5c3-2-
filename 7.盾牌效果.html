@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+        background-color: green;
+    }
+
+    div {
+        width: 500px;
+        margin: 50px auto;
+    }
+
+  </style>
+</head>
+<body>
+<button>打散</button>
+<button>合并</button>
+<div>
+    <img src="images/shield_1_01.png" alt="">
+    <img src="images/shield_1_02.png" alt="">
+    <img src="images/shield_1_03.png" alt="">
+    <img src="images/shield_1_04.png" alt="">
+    <img src="images/shield_1_05.png" alt="">
+    <img src="images/shield_1_06.png" alt="">
+    <img src="images/shield_1_07.png" alt="">
+    <img src="images/shield_1_08.png" alt="">
+    <img src="images/shield_1_09.png" alt="">
+</div>
+
+    <script>
+        var btn1 = document.querySelector("button:first-child")
+        var btn2 = document.querySelector("button:last-of-type")
+        var imgs = document.querySelectorAll("img")
+        // console.log(btn1,btn2);
+        
+        btn1.addEventListener("click", function () {
+            for (var i = 0; i < imgs.length; i++) {
+                var randomRotate = parseInt(Math.random() * 361);
+                var randomX = parseInt(Math.random() * 801) - 400;
+                var randomY = parseInt(Math.random() * 401) - 200;
+                imgs[i].style.transition = "all 1s";
+                imgs[i].style.transform = "translate("+randomX+"px, "+randomY+"px) rotate("+randomRotate+"deg)";
+            }
+        })
+
+        btn2.addEventListener("click", function () {
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].style.transition = "all 1s";
+                imgs[i].style.transform = "translate(0px, 0px) rotate(0deg)";
+            }
+        })
+
+    </script>
+</body>
+</html>
